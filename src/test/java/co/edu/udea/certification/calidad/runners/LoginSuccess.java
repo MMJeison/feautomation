@@ -13,6 +13,6 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
   snippets = SnippetType.CAMELCASE
 )
 
-public class SimulationCancellationsModuleFunctionalities {
+public class LoginSuccess {
   
 }
