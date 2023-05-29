@@ -12,6 +12,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
 import net.thucydides.core.annotations.Managed;
+import org.junit.After;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
@@ -32,6 +33,11 @@ public class LoginSuccessStepDefinitions {
         student.can(BrowseTheWeb.with(driver));
     }
 
+    @After
+    public void tearDown(){
+        driver.quit();
+    }
+
     @Given("I am on the login page")
     public void iAmOnTheLoginPage(){
         student.attemptsTo(Open.browserOn(userPage));
@@ -47,10 +53,12 @@ public class LoginSuccessStepDefinitions {
     }
 
     @Then("I should be able to access the platform")
-    public void iShouldBeAbleToAccessThePlatform(){
+    public void iShouldBeAbleToAccessThePlatform() throws  InterruptedException{
+        Thread.sleep(3500);
         String expectedMessage = "Cancelación de curso";
         student.should(
                 seeThat(LoginSuccess.withValidation(expectedMessage), equalTo(true))
         );
+
     }
 }
