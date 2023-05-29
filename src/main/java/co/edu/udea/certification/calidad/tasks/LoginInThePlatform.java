@@ -25,5 +25,9 @@ public class LoginInThePlatform implements Task {
   public static LoginInThePlatform withCredentials(String username, String password) {
     return Tasks.instrumented(LoginInThePlatform.class, username, password);
   }
+
+  public static LoginInThePlatform withEmptyFields() {
+    return Tasks.instrumented(LoginInThePlatform.class, "", "");
+  }
   
 }
