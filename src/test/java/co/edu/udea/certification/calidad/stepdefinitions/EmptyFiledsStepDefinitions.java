@@ -52,7 +52,8 @@ public class EmptyFiledsStepDefinitions {
   }
 
   @Then("I should see an warning message")
-  public void iShouldSeeAnWarningMessage() {
+  public void iShouldSeeAnWarningMessage() throws InterruptedException {
+    Thread.sleep(3000);
     student.should(
             seeThat(EmptyFields.withMessage("Completa este campo"), equalTo(true))
     );

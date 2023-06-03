@@ -14,6 +14,10 @@ public class UserPage extends PageObject {
 
   public static final Target BUTTON_LOGIN = Target.the("Boton para iniciar sesion").locatedBy("//*[@id='root']/div/div/div[2]/form/input");
 
+  public static final Target TEXT_ERROR_LOGIN_FAILED = Target.the("Mensaje de error al iniciar sesión").locatedBy("//*[@id='5']/div[1]/div[2]");
+
+  public static final Target ERROR_CONTAINER = Target.the("Contenedor de mensajes de error").locatedBy("//*[@id='root']/div/div/div[3]/div");
+
   public static final Target TEXT_VALIDATION_LOGIN = Target.the("Texto de validacion de inicio de sesion").locatedBy("//*[@id='first_e']/h4");
 
 }
